@@ -10,7 +10,7 @@ const Welcome = () => {
   const router = useRouter();
 
   return (
-    <View style={{ marginTop: 15, flex: 1 }}>
+    <SafeAreaView style={{ marginTop: 15, flex: 1 }}>
       <View style={styles.TitleView}>
         <Text style={styles.TitleText}>
           Vibe<Text style={styles.TitleN}>N</Text>est
@@ -35,14 +35,14 @@ const Welcome = () => {
       <View style={styles.ButtonView}>
         <Button
           onPress={() => {
-            router.navigate("index");
+            router.navigate("login");
           }}
           title="Get Started"
           style={styles.customButton}
           textStyle={styles.customButtonText}
         />
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
   ButtonView: {
     paddingHorizontal: 20,
     width: "100%",
-    position: "absolute", //Here is the trick
-    bottom: 15, //Here is the trick
+    position: "absolute",
+    bottom: verticalScale(25),
   },
 });
